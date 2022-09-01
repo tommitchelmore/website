@@ -1,0 +1,6 @@
+* {
+    @apply font-sans text-base;
+}
+html, body {
+    @apply bg-haze dark:bg-vulcan;
+}
