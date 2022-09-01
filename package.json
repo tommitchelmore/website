@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.12",
+    "@fontsource/playfair-display": "^4.5.11",
+    "@tailwindcss/line-clamp": "^0.4.1",
     "astro": "^1.1.3"
   },
   "devDependencies": {
