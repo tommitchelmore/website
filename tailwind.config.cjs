@@ -19,11 +19,13 @@ module.exports = {
 			medium: 500,
 		},
 		fontSize: {
-			display: "6rem",    // 96px
-			heading: "3rem",    // 48px
-			subheading: "2rem", // 32px
-			base: "1.25rem",    // 20px
-			label: "1rem"       // 16px
+			"display-large": ["6rem", "6rem"],
+			"display-medium": ["5.5rem", "5.5rem"],
+			"display-small": ["3rem", "3rem"],
+			heading: ["3rem", "3rem"],
+			subheading: ["2rem", "2rem"],
+			base: ["1.25rem", "1.25rem"],
+			label: ["1rem", "1rem"]
 		}
 	},
 	plugins: [
