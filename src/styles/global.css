@@ -1,9 +1,6 @@
 * {
-    @apply font-sans font-regular text-base text-vulcan/60 dark:text-haze/60;
+    @apply font-sans font-regular text-body-small lg:text-body-medium 2xl:text-body-large text-vulcan/60 dark:text-haze/60;
 }
 body {
     @apply bg-haze dark:bg-vulcan;
-}
-em {
-    @apply text-amaranth dark:text-amaranth font-medium font-serif not-italic;
 }

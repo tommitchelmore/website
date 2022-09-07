@@ -1,15 +1,46 @@
 ---
 import BaseLayout from '@layouts/base.astro'
+import Typography from '@components/Typography';
+import Experience from '@components/experience/Experience';
+import bg1 from '@assets/bg1.svg'
+import bg2 from '@assets/bg2.svg'
+import bg3 from '@assets/bg3.svg'
 ---
 <BaseLayout>
-	<section id="home">
-		<div class="container mx-auto py-32 space-y-6">
-			<h1 class="text-display-small md:text-display-medium xl:text-display-large font-serif font-medium text-vulcan dark:text-haze">
-				Thomas<br />Mitchelmore
-			</h1>
-			<p class="max-w-[700px]">
-				Student at the <em>University of Southampton</em> (MEng Computer Science) and software engineer at <em>Iceline Hosting</em>.
-			</p>
+	<section id="home" class="relative">
+		<img src={bg1} alt="" class="absolute top-0 right-0" />
+		<div class="container mx-auto pt-48 pb-32 space-y-6">
+			<Typography variant="display">
+				Thomas<br>
+				Mitchelmore
+			</Typography>
+			<Typography class="max-w-[700px]">
+				Student at the <Typography emphasis>University of Southampton</Typography> (MEng Computer Science) and software engineer at <Typography emphasis>Iceline Hosting</Typography>.
+			</Typography>
+		</div>
+	</section>
+	<section>
+		<div class="container mx-auto items-center py-12 space-y-16">
+			<Typography variant="heading">Featured Projects</Typography>
+		</div>
+	</section>
+	<section class="relative">
+		<img src={bg2} alt="" class="absolute top-0 left-0" />
+		<div class="container mx-auto space-y-16 py-12">
+			<Typography variant="heading">Experience</Typography>
+			<Experience />
+		</div>
+	</section>
+	<section>
+		<div class="container mx-auto space-y-16 py-12">
+			<Typography variant="heading">Latest Posts</Typography>
+
+		</div>
+	</section>
+	<section class="relative">
+		<img src={bg3} alt="" class="absolute top-0 right-0" />
+		<div class="container mx-auto space-y-16 py-12">
+			<Typography variant="heading">Contact</Typography>
 		</div>
 	</section>
 </BaseLayout>

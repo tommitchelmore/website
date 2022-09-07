@@ -3,9 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
+      "@elements/*": ["src/elements/*"],
       "@styles/*": ["src/styles/*"],
-    }
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }
