@@ -663,13 +663,6 @@
   dependencies:
     storyblok-js-client "^4.5.6"
 
-"@storyblok/js@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.8.0.tgz#cda25bac9b27de2b02854182c3b0dd0cf1a0f50d"
-  integrity sha512-A17atNGGzWXvSumzBeT89aLIF/Vx7/fpUn+QdrOPlPI+YrSdTJW0D1o2NOY0N9HW+FGY1y4fxFVGIx14L+ZkoA==
-  dependencies:
-    storyblok-js-client "^4.5.6"
-
 "@tailwindcss/line-clamp@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.1.tgz#b7be60dca53a2f03dd2ad1e1e8ca52ca192ce4c8"

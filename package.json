@@ -27,7 +27,6 @@
     "@astrojs/solid-js": "^1.1.0",
     "@astrojs/tailwind": "^1.0.0",
     "@storyblok/astro": "^1.0.0",
-    "@storyblok/js": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "axios": "^0.27.2",

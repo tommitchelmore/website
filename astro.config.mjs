@@ -1,11 +1,11 @@
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
-import storyblok from "@storyblok/astro"
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
+import partytown from '@astrojs/partytown'
+import sitemap from '@astrojs/sitemap'
+import image from '@astrojs/image'
+import storyblok from '@storyblok/astro'
 
-import solidJs from "@astrojs/solid-js";
+import solidJs from '@astrojs/solid-js'
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,14 +18,14 @@ export default defineConfig({
     storyblok({
       accessToken: process.env.STORYBLOK_TOKEN,
       components: {
-        "project": "storyblok/Project"
-      }
-    })
+        project: 'storyblok/Project',
+      },
+    }),
   ],
   vite: {
     ssr: {
-      noExternal: ["@motionone/solid", "@solid-primitives/props"],
-      external: ["svgo"]
-    }
-  }
-});
+      noExternal: ['@motionone/solid', '@solid-primitives/props'],
+      external: ['svgo'],
+    },
+  },
+})
