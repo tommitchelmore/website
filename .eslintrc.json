@@ -1,0 +1,32 @@
+{
+    "extends": [
+        "plugin:prettier/recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:astro/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:solid/typescript"
+    ],
+    "plugins": [
+        "sonarjs",
+        "prettier",
+        "solid",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "prettier/prettier": "error"
+    },
+    "parser": "@typescript-eslint/parser",
+    "overrides": [
+        {
+            "files": ["*.astro"],
+            "parser": "astro-eslint-parser",
+            "parserOptions": {
+                "parser": "@typescript-eslint/parser",
+                "extraFileExtensions": [".astro"]
+            },
+            "rules": {
+            }
+        }
+    ],
+    "root": true
+}

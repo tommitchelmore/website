@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx,.astro"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
@@ -25,7 +26,22 @@
     "@astrojs/solid-js": "^1.1.0",
     "@astrojs/tailwind": "^1.0.0",
     "@storyblok/astro": "^1.0.0",
+    "@storyblok/js": "^1.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "axios": "^0.27.2",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-astro": "^0.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-solid": "^0.7.1",
+    "eslint-plugin-sonarjs": "^0.15.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.4",
     "solid-js": "^1.4.3"
   }
 }
