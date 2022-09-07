@@ -1,15 +1,13 @@
-import { Component, For } from 'solid-js'
+import type { Component } from 'solid-js'
 import ExperienceItem from './ExperienceItem'
-import { getStory } from 'src/util/storyblok'
 
 type IndexProps = {
   class?: string
+  data?: unknown
 }
 
-const data = await getStory('experience')
-console.log(data)
-
 const Index: Component<IndexProps> = (props) => {
+  console.log(props.data)
   return (
     <div />
     // <div class={`${props.class ?? ''} space-y-16`}>
