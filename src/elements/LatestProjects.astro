@@ -1,0 +1,12 @@
+---
+import Thumbnail from '@components/projects/Thumbnail.astro'
+import { getProjects } from '@util/content/project'
+
+const data = (await getProjects()).slice(0, 3)
+---
+
+<div
+  class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 items-stretch"
+>
+  {data.map((post) => <Thumbnail project={post} />)}
+</div>
