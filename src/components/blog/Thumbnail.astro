@@ -25,7 +25,7 @@ const { article } = Astro.props
     <Typography variant="caption" emphasis tag="p" class="capitalize mb-2">
       {article.tag_list.join(', ')}
     </Typography>
-    <Typography variant="title" class="mb-4 group-hover:underline">
+    <Typography variant="title" class="mb-4 group-hover:underline line-clamp-3">
       {article.title}
     </Typography>
     <Typography variant="caption" tag="p" class="mb-3">
