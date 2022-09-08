@@ -13,10 +13,18 @@ export async function getStaticPaths() {
   const articles = await getArticles()
 
   return Promise.all(
-    articles.map(async (article) => ({
-      params: { slug: article.slug },
-      props: { article: await getArticle(article.id) },
-    }))
+    articles.map(async (article, index) => {
+      setTimeout(async () => {
+        return {
+          params: {
+            slug: article.slug,
+          },
+          props: {
+            article: await getArticle(article.id),
+          },
+        }
+      }, 100 * index)
+    })
   )
 }
 
