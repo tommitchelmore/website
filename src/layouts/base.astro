@@ -1,9 +1,10 @@
 ---
 import GlobalLayout from '@layouts/global.astro'
+import NavBar from '@components/navigation/NavBar'
 ---
 
 <GlobalLayout>
-  <!-- NAV -->
+  <NavBar client:load />
   <main>
     <slot />
   </main>
