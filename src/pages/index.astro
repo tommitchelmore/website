@@ -4,13 +4,12 @@ import Typography from '@components/Typography'
 import Experience from '@elements/Experience.astro'
 import bg1 from '@assets/bg1.svg'
 import bg2 from '@assets/bg2.svg'
-import bg3 from '@assets/bg3.svg'
 import LatestPosts from '@elements/LatestPosts.astro'
 ---
 
 <BaseLayout>
   <section id="home" class="relative">
-    <img src={bg1} alt="" class="absolute top-0 right-0" />
+    <img src={bg1} alt="" class="absolute top-0 right-0 z-[-1]" />
     <div class="container mx-auto px-8 pt-48 pb-32 space-y-6">
       <Typography variant="display">
         Thomas<br />
@@ -31,20 +30,19 @@ import LatestPosts from '@elements/LatestPosts.astro'
     </div>
   </section>
   <section class="relative">
-    <img src={bg2} alt="" class="absolute top-0 left-0" />
     <div class="container mx-auto px-8 space-y-16 py-12">
       <Typography variant="heading">Industry Experience</Typography>
       <Experience />
     </div>
   </section>
-  <section>
+  <section class="relative">
+    <img src={bg2} alt="" class="absolute top-0 left-0 z-[-1]" />
     <div class="container mx-auto px-8 space-y-16 py-12">
       <Typography variant="heading">Latest Posts</Typography>
       <LatestPosts />
     </div>
   </section>
   <section class="relative">
-    <img src={bg3} alt="" class="absolute top-0 right-0" />
     <div class="container mx-auto px-8 space-y-16 py-12">
       <Typography variant="heading">Contact</Typography>
     </div>

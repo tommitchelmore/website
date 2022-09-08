@@ -1,0 +1,39 @@
+---
+import { Image } from '@astrojs/image/components'
+import Typography from '@components/Typography'
+import type { TypeProject } from 'contentful'
+
+export interface Props {
+  project: TypeProject
+}
+
+const { project } = Astro.props
+---
+
+<a
+  href={'/projects/' + project.fields.slug}
+  class="space-y-4 group flex flex-col flex-grow"
+>
+  <Image
+    src={'https:' + project.fields.image.fields.file?.url}
+    alt=""
+    width={1920}
+    height={1080}
+    class="w-full aspect-video rounded-md"
+  />
+  <div class="flex flex-col flex-grow">
+    <Typography variant="title" class="mb-2 group-hover:underline">
+      {project.fields.title}
+    </Typography>
+    {
+      project.fields.tags && (
+        <Typography variant="caption" emphasis tag="p" class="capitalize mb-4">
+          {project.fields.tags.join(', ')}
+        </Typography>
+      )
+    }
+    <Typography>
+      {project.fields.subtitle}
+    </Typography>
+  </div>
+</a>

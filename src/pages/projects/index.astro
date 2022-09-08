@@ -1,0 +1,27 @@
+---
+import { getProjects } from '@util/content/project'
+import BaseLayout from '@layouts/base.astro'
+import Typography from '@components/Typography'
+import bg1 from '@assets/bg1.svg'
+import Thumbnail from '@components/projects/Thumbnail.astro'
+
+const projects = await getProjects()
+---
+
+<BaseLayout>
+  <section class="relative">
+    <img src={bg1} alt="" class="absolute top-0 right-0 z-[-1]" />
+    <div class="container mx-auto pt-32 pb-16 flex flex-col items-center">
+      <Typography variant="display" tag="h1">Projects</Typography>
+    </div>
+  </section>
+  <section>
+    <div class="container mx-auto py-16">
+      <div
+        class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 items-stretch"
+      >
+        {projects.map((project) => <Thumbnail project={project} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
