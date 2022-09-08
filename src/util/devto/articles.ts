@@ -2,10 +2,11 @@ import axios from 'axios'
 import type { Article, ArticleInfo } from './types'
 
 async function getArticles() {
-  const res = await axios.get(
-    `https://dev.to/api/articles?username=${import.meta.env.DEVTO_USERNAME}`
-  )
-  console.log(res.data)
+  const res = await axios.get(`https://dev.to/api/articles/me`, {
+    headers: {
+      'api-key': import.meta.env.DEVTO_API_KEY,
+    },
+  })
   return res.data as ArticleInfo[]
 }
 
