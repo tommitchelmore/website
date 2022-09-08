@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '@layouts/base.astro'
 import Typography from '@components/Typography'
-import Experience from '@components/experience/Experience'
+import Experience from '@elements/Experience.astro'
 import bg1 from '@assets/bg1.svg'
 import bg2 from '@assets/bg2.svg'
 import bg3 from '@assets/bg3.svg'
+import LatestPosts from '@elements/LatestPosts.astro'
 ---
 
 <BaseLayout>
@@ -32,13 +33,14 @@ import bg3 from '@assets/bg3.svg'
   <section class="relative">
     <img src={bg2} alt="" class="absolute top-0 left-0" />
     <div class="container mx-auto space-y-16 py-12">
-      <Typography variant="heading">Experience</Typography>
+      <Typography variant="heading">Industry Experience</Typography>
       <Experience />
     </div>
   </section>
   <section>
     <div class="container mx-auto space-y-16 py-12">
       <Typography variant="heading">Latest Posts</Typography>
+      <LatestPosts />
     </div>
   </section>
   <section class="relative">

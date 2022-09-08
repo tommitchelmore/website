@@ -1,33 +1,32 @@
 import Typography from '@components/Typography'
-import { Component, For } from 'solid-js'
+import { renderRichText, Transformers } from '@util/content/renderRichText'
+import type { TypeExperience } from 'contentful'
+import type { Component } from 'solid-js'
 
-export type ExperienceItemProps = {
+export type ExperienceItemProps = TypeExperience & {
   class?: string
-  company: string
-  job: string
-  type: string
-  start: string
-  end: string
-  description: string[]
+}
+
+const transformers: Transformers = {
+  'unordered-list': (value) =>
+    `<ul class="list-disc ml-4 space-y-2">${value}</ul>`,
 }
 
 const ExperienceItem: Component<ExperienceItemProps> = (props) => {
   return (
     <div class={`${props.class ?? ''} space-y-4`}>
       <div class="flex justify-between">
-        <Typography variant="title">{props.company}</Typography>
+        <Typography variant="title">{props.fields.title}</Typography>
         <Typography tag="span">
-          {props.start} - {props.end}
+          {props.fields.dateFrom} - {props.fields.dateTo ?? 'Present'}
         </Typography>
       </div>
       <Typography class="italic">
-        {props.job} - {props.type}
+        {props.fields.role} - {props.fields.location}
       </Typography>
-      <ul class="list-disc list-inside space-y-2">
-        <For each={props.description}>
-          {(item) => <Typography tag="li">{item}</Typography>}
-        </For>
-      </ul>
+      <div
+        innerHTML={renderRichText(props.fields.body.content, transformers)}
+      />
     </div>
   )
 }

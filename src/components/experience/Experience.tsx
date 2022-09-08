@@ -1,18 +1,17 @@
-import type { Component } from 'solid-js'
+import type { TypeExperience } from 'contentful'
+import { Component, For } from 'solid-js'
 import ExperienceItem from './ExperienceItem'
 
 type IndexProps = {
   class?: string
-  data?: unknown
+  data?: TypeExperience[]
 }
 
 const Index: Component<IndexProps> = (props) => {
-  console.log(props.data)
   return (
-    <div />
-    // <div class={`${props.class ?? ''} space-y-16`}>
-    //   <For each={data}>{(item) => <ExperienceItem {...item} />}</For>
-    // </div>
+    <div class={`${props.class ?? ''} space-y-16`}>
+      <For each={props.data}>{(item) => <ExperienceItem {...item} />}</For>
+    </div>
   )
 }
 

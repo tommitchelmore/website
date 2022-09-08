@@ -8,8 +8,9 @@
       "@components/*": ["src/components/*"],
       "@elements/*": ["src/elements/*"],
       "@styles/*": ["src/styles/*"],
+      "@util/*": ["src/util/*"],
     },
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
   }
 }

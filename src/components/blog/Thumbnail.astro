@@ -1,0 +1,35 @@
+---
+import { Image } from '@astrojs/image/components'
+import Typography from '@components/Typography'
+import type { ArticleInfo } from '@util/devto/types'
+
+export interface Props {
+  article: ArticleInfo
+}
+
+const { article } = Astro.props
+---
+
+<div class="space-y-4 group cursor-pointer flex flex-col flex-grow">
+  <Image
+    src={article.cover_image}
+    alt=""
+    width={1000}
+    height={420}
+    class="w-full rounded-md"
+  />
+  <div class="flex flex-col flex-grow">
+    <Typography variant="caption" emphasis tag="p" class="capitalize mb-2">
+      {article.tag_list.join(', ')}
+    </Typography>
+    <Typography variant="title" class="mb-4 group-hover:underline">
+      {article.title}
+    </Typography>
+    <Typography variant="caption" tag="p" class="mb-3">
+      {article.readable_publish_date} · {article.reading_time_minutes} min read
+    </Typography>
+    <Typography>
+      {article.description}
+    </Typography>
+  </div>
+</div>

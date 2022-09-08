@@ -1,0 +1,8 @@
+---
+import { getExperiences } from 'src/util/content/experience'
+import ExperienceComponent from 'src/components/experience/Experience'
+
+const data = await getExperiences()
+---
+
+<ExperienceComponent data={data} />
