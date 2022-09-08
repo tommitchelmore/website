@@ -53,9 +53,10 @@ const { project } = Astro.props
       <Image
         src={'http:' + project.fields.image.fields.file?.url}
         alt={project.fields.title}
-        width={1920}
-        height={1080}
+        width={1280}
+        height={720}
         class="w-full aspect-video"
+        format={['webp', 'avif']}
       />
     </div>
   </section>

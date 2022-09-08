@@ -17,9 +17,10 @@ const { project } = Astro.props
   <Image
     src={'https:' + project.fields.image.fields.file?.url}
     alt=""
-    width={1920}
-    height={1080}
+    width={1280}
+    height={720}
     class="w-full aspect-video rounded-md"
+    format={['webp', 'avif']}
   />
   <div class="flex flex-col flex-grow">
     <Typography variant="title" class="mb-2 group-hover:underline line-clamp-1">

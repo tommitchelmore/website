@@ -52,9 +52,10 @@ const { article } = Astro.props
       <Image
         src={article.cover_image}
         alt={article.title}
-        width={1000}
-        height={420}
+        width={500}
+        height={210}
         class="w-full"
+        format={['webp', 'avif']}
       />
     </div>
   </section>

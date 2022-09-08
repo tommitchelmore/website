@@ -17,9 +17,10 @@ const { article } = Astro.props
   <Image
     src={article.cover_image}
     alt=""
-    width={1000}
-    height={420}
+    width={500}
+    height={210}
     class="w-full rounded-md"
+    format={['webp', 'avif']}
   />
   <div class="flex flex-col flex-grow">
     <Typography variant="caption" emphasis tag="p" class="capitalize mb-2">
