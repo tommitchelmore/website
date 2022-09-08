@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { ArticleInfo } from './types'
+import type { Article, ArticleInfo } from './types'
 
 async function getArticles() {
   const res = await axios.get(
@@ -8,4 +8,9 @@ async function getArticles() {
   return res.data as ArticleInfo[]
 }
 
-export default getArticles
+async function getArticle(id: number) {
+  const res = await axios.get(`https://dev.to/api/articles/${id}`)
+  return res.data as Article
+}
+
+export { getArticles, getArticle }

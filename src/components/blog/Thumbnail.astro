@@ -10,7 +10,10 @@ export interface Props {
 const { article } = Astro.props
 ---
 
-<div class="space-y-4 group cursor-pointer flex flex-col flex-grow">
+<a
+  href={'/blog/' + article.slug}
+  class="space-y-4 group block flex flex-col flex-grow"
+>
   <Image
     src={article.cover_image}
     alt=""
@@ -32,4 +35,4 @@ const { article } = Astro.props
       {article.description}
     </Typography>
   </div>
-</div>
+</a>

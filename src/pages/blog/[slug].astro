@@ -1,0 +1,26 @@
+---
+import BlogLayout from '@layouts/blog.astro'
+import { getArticle, getArticles } from '@util/devto/articles'
+import type { Article } from '@util/devto/types'
+
+interface Props {
+  article: Article
+}
+
+export async function getStaticPaths() {
+  const articles = await getArticles()
+
+  return Promise.all(
+    articles.map(async (article) => ({
+      params: { slug: article.slug },
+      props: { article: await getArticle(article.id) },
+    }))
+  )
+}
+
+const { article } = Astro.props
+---
+
+<BlogLayout>
+  {JSON.stringify(article)}
+</BlogLayout>
