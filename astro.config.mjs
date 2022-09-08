@@ -9,6 +9,7 @@ import solidJs from '@astrojs/solid-js'
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), partytown(), sitemap(), image(), solidJs()],
+  site: 'https://beta.mitchelmore.dev',
   vite: {
     ssr: {
       noExternal: ['@motionone/solid', '@solid-primitives/props'],
