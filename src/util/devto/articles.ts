@@ -1,5 +1,10 @@
 import axios from 'axios'
+import axiosRetry from 'axios-retry'
 import type { Article, ArticleInfo } from './types'
+
+axiosRetry(axios, {
+  retries: 12,
+})
 
 async function getArticles() {
   const res = await axios.get(`https://dev.to/api/articles/me`, {
