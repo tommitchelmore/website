@@ -35,8 +35,8 @@ type ArticleInfo = {
   user: User
 }
 
-type Article = {
-  // todo
+type Article = ArticleInfo & {
+  body_html: string
 }
 
 export type { User, ArticleInfo, Article }

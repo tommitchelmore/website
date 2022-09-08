@@ -2,8 +2,10 @@
 import BlogLayout from '@layouts/blog.astro'
 import { getArticle, getArticles } from '@util/devto/articles'
 import type { Article } from '@util/devto/types'
+import Typography from '@components/Typography'
+import { Image } from '@astrojs/image/components'
 
-interface Props {
+export interface Props {
   article: Article
 }
 
@@ -21,6 +23,39 @@ export async function getStaticPaths() {
 const { article } = Astro.props
 ---
 
-<BlogLayout>
-  {JSON.stringify(article)}
+<BlogLayout articleId={article.id}>
+  <section id="home">
+    <div
+      class="space-y-6 flex flex-col items-center justify-center text-center"
+    >
+      <Typography variant="heading" tag="h1">
+        {article.title}
+      </Typography>
+      <div class="flex space-x-4 items-center justify-center">
+        <Typography>
+          {
+            new Intl.DateTimeFormat('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            }).format(new Date(article.published_at))
+          }
+        </Typography>
+      </div>
+      <Image
+        src={article.cover_image}
+        alt={article.title}
+        width={1000}
+        height={420}
+        class="w-full"
+      />
+    </div>
+  </section>
+  <section>
+    <article
+      class="container mx-auto py-16 prose lg:prose-xl"
+      set:html={article.body_html}
+    >
+    </article>
+  </section>
 </BlogLayout>

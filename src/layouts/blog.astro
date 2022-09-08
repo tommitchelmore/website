@@ -1,7 +1,46 @@
 ---
+import Typography from '@components/Typography'
 import BaseLayout from '@layouts/base.astro'
+import { Icon } from 'astro-icon'
+import bg1 from '@assets/bg1.svg'
+import { getArticles } from '@util/devto/articles'
+import Thumbnail from '@components/blog/Thumbnail.astro'
+
+export interface Props {
+  articleId: number
+}
+
+const { articleId } = Astro.props
+const articles = (await getArticles())
+  .filter((article) => article.id !== articleId)
+  .slice(0, 2)
 ---
 
 <BaseLayout>
-  <slot />
+  <div class="relative">
+    <img src={bg1} alt="" class="absolute top-0 right-0 z-[-1]" />
+    <div class="pt-32 max-w-3xl 2xl:max-w-5xl px-8 mx-auto">
+      <div class="flex justify-between items-center mb-8">
+        <a href="/blog" class="hover:underline">
+          <Typography
+            variant="caption"
+            tag="span"
+            class="flex items-center text-vulcan/60 dark:text-haze/60"
+          >
+            <Icon name="ri:arrow-left-line" size={16} class="mr-1" />
+            Back to blog</Typography
+          >
+        </a>
+      </div>
+      <slot />
+      <div
+        class="pt-16 pb-32 border-t border-vulcan/10 dark:border-haze/10 space-y-8"
+      >
+        <Typography variant="heading">More to read</Typography>
+        <div class="grid gap-8 xl:grid-cols-2 items-stretch">
+          {articles.map((post) => <Thumbnail article={post} />)}
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>

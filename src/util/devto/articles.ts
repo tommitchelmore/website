@@ -5,6 +5,7 @@ async function getArticles() {
   const res = await axios.get(
     `https://dev.to/api/articles?username=${import.meta.env.DEVTO_USERNAME}`
   )
+  console.log(res.data)
   return res.data as ArticleInfo[]
 }
 
