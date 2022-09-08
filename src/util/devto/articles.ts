@@ -1,8 +1,8 @@
-import axios from 'axios'
+import AxiosInstance from '@util/axios'
 import type { Article, ArticleInfo } from './types'
 
 async function getArticles() {
-  const res = await axios.get(`https://dev.to/api/articles/me`, {
+  const res = await AxiosInstance.get(`https://dev.to/api/articles/me`, {
     headers: {
       'api-key': import.meta.env.DEVTO_API_KEY,
     },
@@ -11,7 +11,7 @@ async function getArticles() {
 }
 
 async function getArticle(id: number) {
-  const res = await axios.get(`https://dev.to/api/articles/${id}`)
+  const res = await AxiosInstance.get(`https://dev.to/api/articles/${id}`)
   return res.data as Article
 }
 
