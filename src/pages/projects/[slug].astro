@@ -1,0 +1,72 @@
+---
+import Typography from '@components/Typography'
+import { Image } from '@astrojs/image/components'
+import ProjectLayout from '@layouts/project.astro'
+import { getProject, getProjects } from '@util/content/project'
+import type { TypeProject } from 'contentful'
+import { renderRichText } from '@util/content/renderRichText'
+
+export interface Props {
+  project: TypeProject
+}
+
+export async function getStaticPaths() {
+  const projects = await getProjects()
+
+  return Promise.all(
+    projects.map(async (project, index) => {
+      await new Promise((resolve) => setTimeout(resolve, 100 * index))
+      return {
+        params: {
+          slug: project.fields.slug,
+        },
+        props: {
+          project: await getProject(project.sys.id),
+        },
+      }
+    })
+  )
+}
+
+const { project } = Astro.props
+---
+
+<ProjectLayout projectId={project.sys.id}>
+  <section id="home">
+    <div
+      class="space-y-6 flex flex-col items-center justify-center text-center"
+    >
+      <Typography variant="heading" tag="h1">
+        {project.fields.title}
+      </Typography>
+      <div class="flex space-x-4 items-center justify-center">
+        <Typography>
+          {
+            new Intl.DateTimeFormat('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            }).format(new Date(project.sys.updatedAt))
+          }
+        </Typography>
+      </div>
+      <Image
+        src={'http:' + project.fields.image.fields.file?.url}
+        alt={project.fields.title}
+        width={1920}
+        height={1080}
+        class="w-full aspect-video"
+      />
+    </div>
+  </section>
+  {
+    project.fields.body && (
+      <section>
+        <article
+          class="container mx-auto py-16 prose lg:prose-xl dark:prose-invert"
+          set:html={renderRichText(project.fields.body.content)}
+        />
+      </section>
+    )
+  }
+</ProjectLayout>
