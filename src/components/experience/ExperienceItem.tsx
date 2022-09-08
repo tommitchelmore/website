@@ -15,7 +15,7 @@ const transformers: Transformers = {
 const ExperienceItem: Component<ExperienceItemProps> = (props) => {
   return (
     <div class={`${props.class ?? ''} space-y-4`}>
-      <div class="flex justify-between">
+      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between">
         <Typography variant="title">{props.fields.title}</Typography>
         <Typography tag="span">
           {props.fields.dateFrom} - {props.fields.dateTo ?? 'Present'}
