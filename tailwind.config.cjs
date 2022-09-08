@@ -36,5 +36,8 @@ module.exports = {
       'caption-small': ['0.625rem', '0.625rem'],
     },
   },
-  plugins: [require('@tailwindcss/line-clamp', '@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
+  ],
 }
