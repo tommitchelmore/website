@@ -5,12 +5,12 @@ import BaseLayout from '@layouts/base.astro'
 import { getArticles } from '@util/devto/articles'
 import bg1 from '@assets/bg1.svg'
 
-const articles = await getArticles()
+const articles = (await getArticles()).slice(0, 2)
 ---
 
 <BaseLayout>
   <section class="relative">
-    <img src={bg1} alt="" class="absolute top-0 right-0" />
+    <img src={bg1} alt="" class="absolute top-0 right-0 z-[-1]" />
     <div class="container mx-auto pt-32 pb-16 flex flex-col items-center">
       <Typography variant="display" tag="h1">Blog</Typography>
     </div>
