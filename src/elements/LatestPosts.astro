@@ -2,7 +2,7 @@
 import { getArticles } from '@util/devto/articles'
 import Thumbnail from '@components/blog/Thumbnail.astro'
 
-const data = await getArticles()
+const data = (await getArticles()).slice(0, 3)
 ---
 
 <div
