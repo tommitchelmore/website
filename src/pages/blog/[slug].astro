@@ -14,16 +14,15 @@ export async function getStaticPaths() {
 
   return Promise.all(
     articles.map(async (article, index) => {
-      setTimeout(async () => {
-        return {
-          params: {
-            slug: article.slug,
-          },
-          props: {
-            article: await getArticle(article.id),
-          },
-        }
-      }, 100 * index)
+      await new Promise((resolve) => setTimeout(resolve, 100 * index))
+      return {
+        params: {
+          slug: article.slug,
+        },
+        props: {
+          article: await getArticle(article.id),
+        },
+      }
     })
   )
 }
