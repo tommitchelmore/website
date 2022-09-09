@@ -5,7 +5,7 @@ import BaseLayout from '@layouts/base.astro'
 import { getArticles } from '@util/devto/articles'
 import bg1 from '@assets/bg1.svg'
 
-const articles = (await getArticles()).slice(0, 2)
+const articles = await getArticles()
 ---
 
 <BaseLayout>
