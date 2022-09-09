@@ -11,12 +11,12 @@ const articles = (await getArticles()).slice(0, 2)
 <BaseLayout>
   <section class="relative">
     <img src={bg1} alt="" class="absolute top-0 right-0 z-[-1]" />
-    <div class="container mx-auto pt-32 pb-16 flex flex-col items-center">
+    <div class="container mx-auto pt-32 pb-16 px-8 flex flex-col items-center">
       <Typography variant="display" tag="h1">Blog</Typography>
     </div>
   </section>
   <section>
-    <div class="container mx-auto py-16">
+    <div class="container mx-auto py-16 px-8">
       <div
         class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 items-stretch"
       >
