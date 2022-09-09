@@ -1,0 +1,26 @@
+* {
+    @apply font-sans font-regular text-body-small lg:text-body-medium 2xl:text-body-large text-vulcan/60 dark:text-haze/60;
+    font-display: optional;
+}
+body {
+    @apply bg-haze dark:bg-vulcan;
+}
+.rich-text {
+    @apply text-body-small lg:text-body-medium 2xl:text-body-large text-vulcan/80 dark:text-haze/80;
+
+    &>* {
+        @apply mb-4;
+    }
+    h1,h2,h3 {
+        @apply font-serif font-medium text-vulcan/100 dark:text-haze/100;
+    }
+    h1 {
+        @apply text-heading-small lg:text-heading-medium 2xl:text-heading-large;
+    }
+    h2 {
+        @apply text-title-small lg:text-title-medium 2xl:text-title-large;
+    }
+    h3 {
+        @apply text-body-small lg:text-body-medium 2xl:text-body-large;
+    }
+}

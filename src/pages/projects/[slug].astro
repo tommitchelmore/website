@@ -64,7 +64,7 @@ const { project } = Astro.props
     project.fields.body && (
       <section>
         <article
-          class="container mx-auto py-16 prose lg:prose-xl dark:prose-invert"
+          class="container mx-auto py-16 rich-text"
           set:html={renderRichText(project.fields.body.content)}
         />
       </section>

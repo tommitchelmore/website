@@ -47,6 +47,7 @@
     "lint-staged": ">=10",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4",
+    "sass": "^1.54.9",
     "solid-js": "^1.4.3"
   },
   "lint-staged": {
