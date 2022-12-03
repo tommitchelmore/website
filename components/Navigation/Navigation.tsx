@@ -29,7 +29,7 @@ function Navigation() {
 
     const classes = classNames({
         "fixed top-0 inset-x-0 z-30 bg-transparent transition-[background,box-shadow,top] duration-500": true,
-        "bg-card-gradient backdrop-blur-nav shadow-white/5 shadow-lg border-b border-b-card-border/10": pos?.value > 200,
+        "bg-white/05 backdrop-blur-nav shadow-white/5 shadow-lg border-b border-b-card-border/10": pos?.value > 200,
         "top-[-64px]": pos?.delta > 0 && pos?.value > 100,
     })
 
