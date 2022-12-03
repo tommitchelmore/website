@@ -10,14 +10,14 @@ module.exports = {
       "accent": "#54C5AD",
       "text": {
         DEFAULT: "#B1DCFFB2",
-        "alt": "#B1DCFF60",
+        "alt": "#B1DCFF90",
       },
       "white": "#FFFFFF",
       "card-border": "#54C5AD4D",
       transparent: "transparent",
     },
     fontFamily: {
-      sans: ["Poppins", "sans-serif"]
+      sans: ["var(--font-satoshi)", "sans-serif"]
     },
     fontWeight: {
       normal: 400,

@@ -4,6 +4,7 @@ import { RiFlashlightLine } from "react-icons/ri"
 import CompanyLogos from "../../components/CompanyLogos"
 import { useEffect, useRef } from "react"
 import { useScroll, motion, useSpring, useTransform } from "framer-motion"
+import Image from "next/image"
 
 const experience: ExperienceCardProps[] = [
     {
@@ -64,32 +65,39 @@ function Experience() {
     const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
     
     return (
-        <section id="experience" ref={ref} className="bg-grid bg-center bg-contain bg-no-repeat">
-            <div className="relative grid place-items-center overflow-x-hidden">
-                <motion.div style={{scale}} className="relative z-10 max-w-lg text-center grid place-items-center space-y-2 px-6">
-                    <RiFlashlightLine size={64} className="text-accent" />
-                    <h2 className="text-heading font-bold gradient-text">Experience</h2>
-                    <p className="text-text text-subtitle font-medium">
-                        I have over 6 years of experience in Web Development, Project Management and UI/UX Design.
-                    </p>
-                </motion.div>
-                <CompanyLogos className="absolute inset-0" />
-            </div>
-            <div className="container mx-auto py-16 md:py-24 lg:py-32 grid gap-6 md:gap-12 px-6">
-                {experience.map((e, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9}}
-                        whileInView={{ opacity: 1, scale: 1, offset: "0, 0.3" }}
-                        viewport={{amount: 0.5}}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                    >
-                        <ExperienceCard
-                            {...e}
-                        />
+        <section id="experience" ref={ref} className="relative">
+            <div className="relative z-10">
+                <div className="relative grid place-items-center overflow-x-hidden">
+                    <motion.div style={{scale}} className="relative z-10 max-w-lg text-center grid place-items-center space-y-2 px-6">
+                        <RiFlashlightLine size={64} className="text-accent" />
+                        <h2 className="text-heading font-bold gradient-text">Experience</h2>
+                        <p className="text-text text-subtitle font-medium">
+                            I have over 6 years of experience in Web Development, Project Management and UI/UX Design.
+                        </p>
                     </motion.div>
-                ))}
+                    <CompanyLogos className="absolute inset-0" />
+                </div>
+                <div className="container mx-auto py-16 md:py-24 lg:py-32 grid gap-6 md:gap-12 px-6">
+                    {experience.map((e, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9}}
+                            whileInView={{ opacity: 1, scale: 1, offset: "0, 0.3" }}
+                            viewport={{amount: 0.5}}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
+                            <ExperienceCard
+                                {...e}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
             </div>
+            <Image className="absolute z-0 inset-0 object-center opacity-30"
+                src="/img/grid.png"
+                alt=""
+                fill={true}
+            />
         </section>
     );
 }

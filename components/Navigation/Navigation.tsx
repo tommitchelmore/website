@@ -52,6 +52,7 @@ function Navigation() {
                     </NavigationItem>
                 </ul>
                 <button className="block lg:hidden" onClick={openMobileNav}>
+                    <span className="sr-only">Open Navigation</span>
                     <MobileToggle size={36} className="text-text active:text-white" />
                 </button>
             </div>
@@ -86,12 +87,15 @@ function Navigation() {
                     </ul>
                     <div className="mt-auto flex flex-col items-center gap-6">
                         <a href="https://github.com/tommitchelmore" target="_blank" rel="noreferrer" className="text-text hover:text-white transition-colors">
+                            <span className="sr-only">Github</span>
                             <RiGithubFill size={36} />
                         </a>
                         <a href="https://www.linkedin.com/in/tommitchelmore/" target="_blank" rel="noreferrer" className="text-text hover:text-white transition-colors">
+                            <span className="sr-only">LinkedIn</span>
                             <RiLinkedinFill size={36} />
                         </a>
                         <a href="https://discord.com/users/181372740349984768" target="_blank" rel="noreferrer" className="text-text hover:text-white transition-colors">
+                            <span className="sr-only">Discord</span>
                             <RiDiscordFill size={36} />
                         </a>
                     </div>
