@@ -2,8 +2,8 @@ import type { ExperienceCardProps } from "../../components/ExperienceCard"
 import ExperienceCard from "../../components/ExperienceCard"
 import { RiFlashlightLine } from "react-icons/ri"
 import CompanyLogos from "../../components/CompanyLogos"
-import { useEffect, useRef } from "react"
-import { useScroll, motion, useSpring, useTransform } from "framer-motion"
+import { useRef } from "react"
+import { useScroll, m as motion, useTransform } from "framer-motion"
 import Image from "next/image"
 
 const experience: ExperienceCardProps[] = [

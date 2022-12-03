@@ -1,6 +1,6 @@
 import Card from "../Card";
 import { RiGlobalLine as Icon, RiGithubFill, RiLinkedinFill, RiDiscordFill } from "react-icons/ri"
-import { motion } from "framer-motion"
+import { m as motion } from "framer-motion"
 import Image from "next/image"
 
 function Contact() {

@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, m as motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useRef } from "react";
 

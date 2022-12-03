@@ -1,6 +1,6 @@
 import NavigationItem from "./NavigationItem";
 import Link from "next/link";
-import { useScroll, motion, MotionValue, AnimatePresence } from "framer-motion";
+import { useScroll, m as motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import { useState } from "react";
 import { RiMenuLine as MobileToggle, RiGithubFill, RiLinkedinFill, RiDiscordFill } from "react-icons/ri"
