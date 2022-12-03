@@ -29,6 +29,7 @@ export default function HomePage() {
           width={1920}
           height={1920}
           className="absolute top-0 inset-x-0 object-cover object-center"
+          loading="eager"
         />
         <Home />
         <Experience />
