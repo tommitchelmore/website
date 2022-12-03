@@ -51,10 +51,11 @@ function Contact() {
                     </motion.div>
                 </div>
             </div>
-            <Image className="absolute z-0 inset-0 object-center opacity-30"
+            <Image className="absolute z-0 inset-0 object-center object-contain opacity-30 h-full w-full"
                 src="/img/grid.png"
                 alt=""
-                fill={true}
+                width={2722}
+                height={1807}
             />
         </section>
     );
