@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Index() {
   return (
-    <div className="w-screen h-screen bg-radial-gradient grid place-content-center px-6 relative">
+    <div className="w-screen h-screen bg-radial-gradient grid place-content-center p-6 relative">
       <main className="bg-card backdrop-blur-md border border-stroke max-w-lg rounded-xl overflow-hidden relative z-10">
         <div className="w-full h-64 relative">
           <Image
