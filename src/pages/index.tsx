@@ -15,6 +15,7 @@ function Index() {
             style={{
               filter: "sepia(1) hue-rotate(160deg) saturate(0.5) contrast(1.2)"
             }}
+            loading="eager"
           />
         </div>
         <div className="p-8 space-y-6">
