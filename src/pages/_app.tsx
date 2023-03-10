@@ -3,6 +3,7 @@ import { Mulish as BodyFont} from "next/font/google"
 import { Unbounded as DisplayFont} from "next/font/google"
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { Analytics } from '@vercel/analytics/react';
 
 const bodyFont = BodyFont({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     </Head>
     <style dangerouslySetInnerHTML={{__html: `:root { --body-font: ${bodyFont.style.fontFamily}; --display-font: ${displayFont.style.fontFamily} }`}} />
+    <Analytics />
     <Component {...pageProps} />
   </>
 }
