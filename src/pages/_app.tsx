@@ -40,6 +40,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e1e1e" />
       <meta name="msapplication-TileColor" content="#1e1e1e" />
       <meta name="theme-color" content="#1e1e1e" />
+      <link rel="robots" href="/robots.txt" />
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     </Head>
     <style dangerouslySetInnerHTML={{__html: `:root { --body-font: ${bodyFont.style.fontFamily}; --display-font: ${displayFont.style.fontFamily} }`}} />
     <Component {...pageProps} />
